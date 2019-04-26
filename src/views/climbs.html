@@ -1,0 +1,16 @@
+<template>
+  <require from="../resources/elements/climb-list"></require>
+  <require from="../resources/elements/climb-form"></require>
+
+  <div class="ui stackable two column grid">
+    <div class="column">
+      <climb-form climbs.bind="climbs"></climb-form>
+    </div>
+
+    <div class="column">
+      <climb-list climbs.bind="climbs"></climb-list>
+    </div>
+  </div>
+
+</template>
+

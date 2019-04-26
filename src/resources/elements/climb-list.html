@@ -1,0 +1,21 @@
+<template>
+  <h3 class="ui dividing header"> Climbs Added </h3>
+  <table class="ui celled table segment">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Latitude</th>
+      <th>Longtitude</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr repeat.for="climb of climbs">
+      <td> ${climb.climb_name}</td>
+      <td> ${climb.climb_description}</td>
+      <td> ${climb.climb_lat}</td>
+      <td> ${climb.climb_long}</td>
+    </tr>
+    </tbody>
+  </table>
+</template>

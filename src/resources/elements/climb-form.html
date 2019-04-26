@@ -1,0 +1,18 @@
+<template>
+  <form submit.trigger="addClimb()" class="ui form stacked segment">
+      <h3 class="ui dividing header"> Add a Climb </h3>
+      <div class="field">
+        <label>Name </label> <input value.bind="climb_name">
+      </div>
+      <div class="field">
+        <label>Description</label> <input value.bind="climb_description">
+      </div>
+    <div class="field">
+      <label>Latitude </label> <input value.bind="climb_lat">
+    </div>
+    <div class="field">
+      <label>Longtitude</label> <input value.bind="climb_long">
+    </div>
+      <button class="ui blue submit button">Add</button>
+    </form>
+</template>
