@@ -1,16 +1,14 @@
 <template>
-  <require from="views/categories"></require>
-  <require from="views/climbs"></require>
+  <require from="resources/elements/nav-bar.html"></require>
 
   <div class="ui container">
     <section class="ui raised segment">
-      <h3 class="ui headder"> Climbs </h3>
+      <h3 class="ui header"> Climbs </h3>
     </section>
-
+    <nav-bar router.bind="router"></nav-bar>
 
     <div class="ui basic segment">
-      <climbs></climbs>
-      <categories></categories>
+      <router-view></router-view>
     </div>
 
   </div>
