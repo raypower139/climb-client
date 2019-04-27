@@ -8,4 +8,5 @@ export interface Climb {
   climb_description: string;
   climb_lat: number;
   climb_long: number;
+  category; Category;
 }

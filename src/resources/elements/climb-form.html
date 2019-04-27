@@ -13,6 +13,17 @@
     <div class="field">
       <label>Longtitude</label> <input value.bind="climb_long">
     </div>
+
+    <h4 class="ui dividing header"> Select Category </h4>
+    <div class="grouped inline fields">
+      <div class="field" repeat.for="category of categories">
+        <div class="ui radio checkbox">
+          <input type="radio" model.bind="category" checked.bind="selectedCategory">
+          <label>${category.Name}, ${category.Location}</label>
+        </div>
+      </div>
+    </div>
+
       <button class="ui blue submit button">Add</button>
     </form>
 </template>
