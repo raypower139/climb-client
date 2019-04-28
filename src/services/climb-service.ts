@@ -1,15 +1,17 @@
 import {inject} from 'aurelia-framework';
 import {Category, Climb} from "./climb-types";
 import {HttpClient} from 'aurelia-http-client';
+import { EventAggregator } from 'aurelia-event-aggregator';
+import {TotalUpdate} from "./messages";
 
-
-@inject(HttpClient)
+@inject(HttpClient, EventAggregator)
 export class ClimbService {
   categories : Category[] = [];
   climbs: Climb[] = [];
   total = 0;
 
-  constructor(private httpClient: HttpClient) {
+
+  constructor(private httpClient: HttpClient, private ea: EventAggregator) {
     httpClient.configure(http => {
       http.withBaseUrl('http://localhost:8080');
     });
@@ -32,6 +34,7 @@ export class ClimbService {
     };
     this.climbs.push(<Climb>climb);
     this.total = this.total + 1;
+    this.ea.publish(new TotalUpdate(this.total));
     console.log('No. of Climbs so far ' + this.total);
   }
 
