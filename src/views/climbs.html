@@ -1,13 +1,18 @@
 <template>
   <require from="../resources/elements/climb-list"></require>
   <require from="../resources/elements/climb-form"></require>
+  <require from="../resources/elements/total-climbs"></require>
 
-  <div class="ui stackable two column grid">
-    <div class="column">
-      <climb-form climbs.two-way="climbs" categories.bind="categories"></climb-form>
+  <div class="ui stackable grid">
+    <div class="seven wide column">
+      <climb-form categories.bind="categories"></climb-form>
     </div>
 
-    <div class="column">
+    <div class="two wide column">
+      <total-climbs total.bind="total"></total-climbs>
+    </div>
+
+    <div class="seven wide column">
       <climb-list climbs.bind="climbs"></climb-list>
     </div>
   </div>
