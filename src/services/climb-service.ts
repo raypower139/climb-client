@@ -50,7 +50,10 @@ export class ClimbService {
     });
   }
 
-  signup(firstName: string, lastName: string, email: string, password: string) {}
+  signup(firstName: string, lastName: string, email: string, password: string) {
+    //this.changeRouter(PLATFORM.moduleName('app'))
+    return false;
+  }
 
   async login(email: string, password: string) {
     const user = this.users.get(email);
