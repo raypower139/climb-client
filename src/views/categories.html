@@ -1,13 +1,18 @@
 <template>
   <require from="../resources/elements/category-list"></require>
   <require from="../resources/elements/category-form"></require>
+  <require from="../resources/elements/total-climbs"></require>
 
   <div class="ui stackable two column grid">
-  <div class="column">
+    <div class="seven wide column">
     <category-form categories.bind="categories"></category-form>
   </div>
 
-    <div class="column">
+    <div class="two wide column">
+      <total-climbs></total-climbs>
+    </div>
+
+    <div class="seven wide column">
       <category-list categories.bind="categories"></category-list>
     </div>
   </div>

@@ -19,7 +19,15 @@ export class App {
         moduleId: PLATFORM.moduleName('views/categories'),
         nav: true,
         title: 'Category'
+      },
+      {
+        route: 'logout',
+        name: 'logout',
+        moduleId: PLATFORM.moduleName('views/logout'),
+        nav: true,
+        title: 'Logout'
       }
+
     ]);
     this.router = router;
   }

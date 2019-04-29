@@ -3,6 +3,14 @@ export interface Category {
   Location: string;
 }
 
+export interface User {
+  firstName: string;
+  lastName: string;
+  email: string;
+  password: string;
+}
+
+
 export interface Climb {
   climb_name: string;
   climb_description: string;
