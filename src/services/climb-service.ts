@@ -1,9 +1,9 @@
 import {inject, Aurelia} from 'aurelia-framework';
-import { Router } from 'aurelia-router';
-import { PLATFORM } from 'aurelia-pal';
+import {Router} from 'aurelia-router';
+import {PLATFORM} from 'aurelia-pal';
 import {Category, Climb, User } from "./climb-types";
 import {HttpClient} from 'aurelia-http-client';
-import { EventAggregator } from 'aurelia-event-aggregator';
+import {EventAggregator} from 'aurelia-event-aggregator';
 import {TotalUpdate} from "./messages";
 
 @inject(HttpClient, EventAggregator, Aurelia, Router)
@@ -16,14 +16,14 @@ export class ClimbService {
 
   constructor(private httpClient: HttpClient, private ea: EventAggregator,private au: Aurelia, private router: Router) {
     httpClient.configure(http => {
-      http.withBaseUrl('http://localhost:8080');
+      http.withBaseUrl('http://localhost:3000');
     });
     this.getCategories();
     this.getUsers();
   }
 
   async getCategories() {
-    const response = await this.httpClient.get('/api/categories.json');
+    const response = await this.httpClient.get('/api/categoriesapi');
     this.categories = await response.content;
     console.log (this.categories);
   }
@@ -43,7 +43,7 @@ export class ClimbService {
   }
 
   async getUsers() {
-    const response = await this.httpClient.get('/api/users.json');
+    const response = await this.httpClient.get('/api/users');
     const users = await response.content;
     users.forEach(user => {
       this.users.set(user.email, user);
@@ -56,6 +56,8 @@ export class ClimbService {
   }
 
   async login(email: string, password: string) {
+    //this.changeRouter(PLATFORM.moduleName('app'))
+
     const user = this.users.get(email);
     if (user && (user.password === password)) {
       this.changeRouter(PLATFORM.moduleName('app'))
