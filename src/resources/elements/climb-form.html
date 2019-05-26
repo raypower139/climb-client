@@ -19,7 +19,7 @@
       <div class="field" repeat.for="category of categories">
         <div class="ui radio checkbox">
           <input type="radio" model.bind="category" checked.bind="selectedCategory">
-          <label>${category.Name}, ${category.Location}</label>
+          <label>${category.category_name}, ${category.category_location}</label>
         </div>
       </div>
     </div>

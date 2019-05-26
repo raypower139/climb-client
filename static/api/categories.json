@@ -1,10 +1,10 @@
 [
   {
-    "Name": "Mahon Falls",
-    "Location": "Comeragh Mountains"
+    "category_name": "Mahon Falls",
+    "category_location": "Comeragh Mountains"
   },
   {
-    "Name": "Powers The Pot",
-    "Location": "Comeragh Mountains"
+    "category_name": "Powers The Pot",
+    "category_location": "Comeragh Mountains"
   }
 ]

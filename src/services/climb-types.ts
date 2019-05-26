@@ -1,6 +1,8 @@
 export interface Category {
-  Name: string;
-  Location: string;
+  category_name: string;
+  category_location: string;
+  _id: string;
+
 }
 
 export interface User {
@@ -17,4 +19,13 @@ export interface Climb {
   climb_lat: number;
   climb_long: number;
   category; Category;
+}
+
+export interface RawClimb {
+  climb_name: string;
+  climb_description: string;
+  climb_lat: number;
+  climb_long: number;
+  category: string;
+  editor: string;
 }
